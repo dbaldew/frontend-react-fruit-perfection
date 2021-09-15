@@ -7,6 +7,9 @@ import ijsblokjes from './assets/ijsblokjes.jpg';
 import {ReactComponent as ShoppingCart} from './assets/winkelmandje.svg';
 
 function App() {
+    const [messageValue, setMessageValue] = React.useState ("");
+
+
     return (
 
         <>
@@ -43,6 +46,22 @@ function App() {
                     description="Een citroen is voor de meeste mensen te zuur om zo uit de hand te eten. Van citroen kun je het vruchtvlees, het sap en de schil gebruiken. Het sappige, lichtgele zure vruchtvlees versterkt de smaak van ander voedsel."
                 />
             </main>
+            <footer>
+                <div className="form-container">
+                    <h2>Contactformulier</h2>
+                    <form >
+                        <input
+                            type="text"
+                            placeholder = "Typ hier jouw bericht"
+                            name = "message"
+                            value = {messageValue}
+                            onChange= {(e) => setMessageValue(e.target.value)}
+                        />
+                    </form>
+                    <button type= "submit">Verstuur</button>
+
+                </div>
+            </footer>
         </>
 
     );
